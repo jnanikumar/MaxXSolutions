@@ -11,6 +11,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+      
     - name: List repo files
       run: ls -R
 
@@ -20,8 +21,8 @@ jobs:
         host: ${{ secrets.GCP_VM_IP }}
         username: ${{ secrets.GCP_VM_USER }}
         key: ${{ secrets.GCP_SSH_PRIVATE_KEY }}
-        source: public/Maxx_Techno_Solutions_Logo.png
-        target: /home/euser/
+        source: public
+        target: /home/euser/maxx
 
     - name: Restart backend service
       uses: appleboy/ssh-action@v0.1.6
